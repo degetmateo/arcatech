@@ -1,0 +1,13 @@
+{
+  "itemGroup.arcatech": "Example Mod Tab",
+  "block.arcatech.example_block": "Example Block",
+  "item.arcatech.example_item": "Example Item",
+
+  "arcatech.configuration.title": "arcatech Configs",
+  "arcatech.configuration.section.arcatech.common.toml": "arcatech Configs",
+  "arcatech.configuration.section.arcatech.common.toml.title": "arcatech Configs",
+  "arcatech.configuration.items": "Item List",
+  "arcatech.configuration.logDirtBlock": "Log Dirt Block",
+  "arcatech.configuration.magicNumberIntroduction": "Magic Number Text",
+  "arcatech.configuration.magicNumber": "Magic Number"
+}
