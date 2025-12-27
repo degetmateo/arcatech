@@ -9,5 +9,11 @@
   "arcatech.configuration.items": "Item List",
   "arcatech.configuration.logDirtBlock": "Log Dirt Block",
   "arcatech.configuration.magicNumberIntroduction": "Magic Number Text",
-  "arcatech.configuration.magicNumber": "Magic Number"
+  "arcatech.configuration.magicNumber": "Magic Number",
+
+  "item.arcatech.bismuth": "Bismuth",
+  "item.arcatech.raw_bismuth": "Raw Bismuth",
+
+  "block.arcatech.bismuth_block": "Block of Bismuth",
+  "block.arcatech.bismuth_ore": "Bismuth Ore"
 }

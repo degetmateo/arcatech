@@ -1,22 +1,13 @@
 package com.mastershen.arcatech;
 
+import com.mastershen.arcatech.block.ArcatechBlocks;
+import com.mastershen.arcatech.item.ArcatechItems;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
-import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -26,20 +17,14 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoforged.neoforge.registries.DeferredRegister;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
-@Mod(arcatech.MOD_ID)
-public class arcatech {
+@Mod(Arcatech.MOD_ID)
+public class Arcatech {
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "arcatech";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
-
-
 
 //    // Create a Deferred Register to hold Blocks which will all be registered under the "arcatech" namespace
 //    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MOD_ID);
@@ -68,7 +53,7 @@ public class arcatech {
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
-    public arcatech(IEventBus modEventBus, ModContainer modContainer) {
+    public Arcatech (IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -83,6 +68,9 @@ public class arcatech {
         // Note that this is necessary if and only if we want *this* class (arcatech) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
+
+        ArcatechItems.register(modEventBus);
+        ArcatechBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -109,7 +97,20 @@ public class arcatech {
 //        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
 //            event.accept(EXAMPLE_BLOCK_ITEM);
 //        }
-    }
+
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ArcatechItems.BISMUTH);
+            event.accept(ArcatechItems.RAW_BISMUTH);
+        };
+
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ArcatechBlocks.BISMUTH_BLOCK);
+        };
+
+        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+            event.accept(ArcatechBlocks.BISMUTH_ORE);
+        };
+    };
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
