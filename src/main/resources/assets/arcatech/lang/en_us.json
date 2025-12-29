@@ -15,5 +15,8 @@
   "item.arcatech.raw_bismuth": "Raw Bismuth",
 
   "block.arcatech.bismuth_block": "Block of Bismuth",
-  "block.arcatech.bismuth_ore": "Bismuth Ore"
+  "block.arcatech.bismuth_ore": "Bismuth Ore",
+
+  "creativetab.arcatech.bismuth_items_tab": "Bismuth Items",
+  "creativetab.arcatech.bismuth_blocks_tab": "Bismuth Blocks"
 }

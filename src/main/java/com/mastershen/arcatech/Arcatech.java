@@ -1,6 +1,7 @@
 package com.mastershen.arcatech;
 
 import com.mastershen.arcatech.block.ArcatechBlocks;
+import com.mastershen.arcatech.item.ArcatechCreativeTabs;
 import com.mastershen.arcatech.item.ArcatechItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -69,6 +70,7 @@ public class Arcatech {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        ArcatechCreativeTabs.register(modEventBus);
         ArcatechItems.register(modEventBus);
         ArcatechBlocks.register(modEventBus);
 
