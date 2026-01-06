@@ -23,6 +23,7 @@ public class ArcatechCreativeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ArcatechItems.BISMUTH);
                         output.accept(ArcatechItems.RAW_BISMUTH);
+                        output.accept(ArcatechItems.CHISEL);
                     })
                     .build());
 
@@ -35,6 +36,7 @@ public class ArcatechCreativeTabs {
                         output.accept(ArcatechBlocks.BISMUTH_BLOCK);
                         output.accept(ArcatechBlocks.BISMUTH_ORE);
                         output.accept(ArcatechBlocks.BISMUTH_DEEPSLATE_ORE);
+                        output.accept(ArcatechBlocks.MAGIC_BLOCK);
                     })
                     .build());
 

@@ -1,6 +1,7 @@
 package com.mastershen.arcatech.item;
 
 import com.mastershen.arcatech.Arcatech;
+import com.mastershen.arcatech.item.custom.ChiselItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -11,11 +12,18 @@ public class ArcatechItems {
 
     public static final DeferredItem<Item> BISMUTH = ITEMS.register(
         "bismuth",
-        () -> new Item(new Item.Properties()));
+        () -> new Item(new Item.Properties())
+    );
 
     public static final DeferredItem<Item> RAW_BISMUTH = ITEMS.register(
-            "raw_bismuth",
-            () -> new Item(new Item.Properties()));
+        "raw_bismuth",
+        () -> new Item(new Item.Properties())
+    );
+
+    public static final DeferredItem<Item> CHISEL = ITEMS.register(
+        "chisel",
+        () -> new ChiselItem(new Item.Properties().durability(ChiselItem.DURABILITY))
+    );
 
     public static void register (IEventBus eventBus) {
         ITEMS.register(eventBus);

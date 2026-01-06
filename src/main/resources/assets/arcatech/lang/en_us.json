@@ -13,10 +13,12 @@
 
   "item.arcatech.bismuth": "Bismuth",
   "item.arcatech.raw_bismuth": "Raw Bismuth",
+  "item.arcatech.chisel": "Chisel",
 
   "block.arcatech.bismuth_block": "Block of Bismuth",
   "block.arcatech.bismuth_ore": "Bismuth Ore",
   "block.arcatech.bismuth_deepslate_ore": "Bismuth Deepslate Ore",
+  "block.arcatech.magic_block": "Magic Block",
 
   "creativetab.arcatech.bismuth_items_tab": "Bismuth Items",
   "creativetab.arcatech.bismuth_blocks_tab": "Bismuth Blocks"
